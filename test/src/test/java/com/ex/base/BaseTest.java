@@ -11,6 +11,9 @@ import com.ex.test.TestApplication;
 
 @SpringBootTest(classes = TestApplication.class)
 public class BaseTest extends AbstractTestNGSpringContextTests  {
+	/**
+	 * Sample comment
+	 */
 	Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
