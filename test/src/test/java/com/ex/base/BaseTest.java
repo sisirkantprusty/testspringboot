@@ -11,18 +11,13 @@ import org.testng.annotations.BeforeMethod;
 import com.ex.test.TestApplication;
 
 @SpringBootTest(classes = TestApplication.class)
-public abstract class BaseTest extends AbstractTestNGSpringContextTests  {
+public abstract class BaseTest extends AbstractTestNGSpringContextTests {
 	Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
-	
+
 	@Autowired
 	WebDriverSession webDriverSession;
-	
-	@BeforeClass(alwaysRun = true)
-    public void beforeEverything(){
-		logger.info ("Before class");
-    }
-	
-	@BeforeMethod(alwaysRun = true, inheritGroups = false)
+
+	@BeforeMethod
 	public void setup() throws InterruptedException {
 		logger.info("Before method started");
 		webDriverSession.init();
