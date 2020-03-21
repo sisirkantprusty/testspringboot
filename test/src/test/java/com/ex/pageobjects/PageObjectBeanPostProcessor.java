@@ -10,10 +10,11 @@ import org.springframework.stereotype.Component;
 import com.ex.base.WebDriverSession;
 
 @Component
-public class PageObjectBeanPostProcessor implements BeanPostProcessor{
+public class PageObjectBeanPostProcessor implements BeanPostProcessor {
 
-	@Lazy @Autowired
-    private WebDriverSession driver;
+	@Lazy
+	@Autowired
+	private WebDriverSession driver;
 
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
@@ -24,8 +25,8 @@ public class PageObjectBeanPostProcessor implements BeanPostProcessor{
 		return bean;
 	}
 
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException{
-        return bean;
-    }
+	@Override
+	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		return bean;
+	}
 }
