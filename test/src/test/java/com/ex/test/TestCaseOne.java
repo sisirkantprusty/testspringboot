@@ -16,6 +16,12 @@ public class TestCaseOne extends BaseTest{
 	@Autowired
 	RuntimeConfiguration RuntimeConfiguration;
 	
+	/**
+	 * By default, Spring creates all singleton beans eagerly at the startup/bootstrapping of the application context. 
+	 * The reason behind this is simple: to avoid and detect all possible errors immediately rather than at runtime.
+	 * However, there're cases when we need to create a bean, not at the application context startup, but when we request it.
+	 * So @Lazy is used for the same
+	 */
 	@Lazy @Autowired
 	TestCaseOnePage testCaseOnePage;
 	
