@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"com.ex.base", "com.ex.test"})
+@ComponentScan({"com.ex.base", "com.ex.test", "com.ex.pageobjects"})
 @SpringBootApplication
 public class TestApplication {
 

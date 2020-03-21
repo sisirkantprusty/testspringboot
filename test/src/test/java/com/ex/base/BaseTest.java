@@ -5,18 +5,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import com.ex.test.TestApplication;
 
 @SpringBootTest(classes = TestApplication.class)
-public class BaseTest extends AbstractTestNGSpringContextTests  {
+public abstract class BaseTest extends AbstractTestNGSpringContextTests  {
 	Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	WebDriverSession webDriverSession;
 	
-	@BeforeMethod
+	@BeforeClass(alwaysRun = true)
+    public void beforeEverything(){
+		logger.info ("Before class");
+    }
+	
+	@BeforeMethod(alwaysRun = true, inheritGroups = false)
 	public void setup() throws InterruptedException {
 		logger.info("Before method started");
 		webDriverSession.init();

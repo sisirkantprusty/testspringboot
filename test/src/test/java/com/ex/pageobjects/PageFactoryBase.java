@@ -1,6 +1,8 @@
-package com.ex.base;
+package com.ex.pageobjects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ex.base.RuntimeConfiguration;
 
 public abstract class PageFactoryBase {
 	

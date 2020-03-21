@@ -9,12 +9,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WebDriverSession {
+	
+	
+	WebDriver webDriver = null;
 	Logger logger = org.slf4j.LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	RuntimeConfiguration runtimeConfiguration;
 	
-	public static WebDriver webDriver;
+	
+	
 	public void setChromeDriver(){
 		logger.info("####################### SET UP CHROME DRIVER #############");
 		System.setProperty("webdriver.chrome.driver",
@@ -44,5 +48,9 @@ public class WebDriverSession {
 	public void quitBrowser(){
 		webDriver.quit();
 	}
+	
+	public WebDriver getWebDriver() {
+        return webDriver;
+    }
 
 }

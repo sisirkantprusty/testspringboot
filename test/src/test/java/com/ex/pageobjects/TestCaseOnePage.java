@@ -1,7 +1,16 @@
 package com.ex.pageobjects;
 
-import com.ex.base.PageFactoryBase;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class TestCaseOnePage extends PageFactoryBase {
+@PageObjectDesktop
+public class TestCaseOnePage {
 
+	@FindBy(xpath = "//a[contains(text(),'Mobile')]")
+	public WebElement linkMobile;
+
+	public void getNoOfLinks() throws InterruptedException {
+		linkMobile.click();
+		Thread.sleep(10000);
+	}
 }
