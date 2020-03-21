@@ -19,8 +19,10 @@ public class PageObjectBeanPostProcessor implements BeanPostProcessor {
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		if (bean.getClass().isAnnotationPresent(PageObjectDesktop.class)) {
-			System.out.println("This is in Bean processror");
+			System.out.println("This is in Bean for page objects with annotation PageObjectDesktop processror");
 			PageFactory.initElements(driver.getWebDriver(), bean);
+		}else {
+			System.out.println("This is in Bean for page objects without annotation PageObjectDesktop processror");
 		}
 		return bean;
 	}
